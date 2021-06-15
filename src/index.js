@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const pdf = require("html-pdf");
 const ejs = require('ejs');
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 
@@ -35,4 +36,5 @@ app.get('/', (req, res) => {
     res.download('./uploads/report.pdf')
   });
 
-app.listen(3333);
+app.listen(PORT);
+console.log(PORT);
